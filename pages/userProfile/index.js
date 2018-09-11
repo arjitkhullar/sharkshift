@@ -1,40 +1,40 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 // styled component(s)
-import classes, { App, UserProfile, GamerScore } from './styles';
+import classes, { App, UserProfile, GamerScore } from './styles'
 
-import * as utils from '../../utils';
+import * as utils from '../../utils'
 
 const stubUser = {
   pic: '//image.ibb.co/jsjxfU/Selection_002.png',
   name: 'John Doe',
   lastLogin: '14 hours ago',
   score: '170',
-  location: 'Toronto, Canada',
-};
+  location: 'Toronto, Canada'
+}
 
 const stubachievements = [
   {
     id: 1,
     name: 'Game Name',
-    achievements: ['one', 'two', 'three'],
+    achievements: ['one', 'two', 'three']
   },
   {
     id: 2,
     name: 'Game Name',
-    achievements: ['one', 'two', 'three'],
+    achievements: ['one', 'two', 'three']
   },
   {
     id: 3,
     name: 'Game Name',
-    achievements: ['one', 'two', 'three'],
+    achievements: ['one', 'two', 'three']
   },
   {
     id: 4,
     name: 'Game Name',
-    achievements: ['one', 'two', 'three'],
-  },
-];
+    achievements: ['one', 'two', 'three']
+  }
+]
 
 const Profile = ({ user }) => (
   <UserProfile>
@@ -51,39 +51,42 @@ const Profile = ({ user }) => (
       </GamerScore>
     </div>
   </UserProfile>
-);
+)
 
 const Leaderboard = ({ achievements }) => (
   <div className={classes.leaderboard}>
     <h1>Achievements:</h1>
     <ul className={classes.list}>
-      {achievements.map(({ name, id, achievements }) => (
-        <li key={`game_${id}`}>
-          <span className={classes.gameName}>{name}</span>
-          <span className={classes.achievements}>
-            Achievements: {achievements.join(', ')}
-          </span>
-        </li>
-      ))}
+      {achievements &&
+        achievements.map(({ name, id, achievements }) => (
+          <li key={`game_${id}`}>
+            <span className={classes.gameName}>{name}</span>
+            <span className={classes.achievements}>
+              Achievements: {achievements.join(', ')}
+            </span>
+          </li>
+        ))}
     </ul>
   </div>
-);
+)
 
 class SharkShift extends Component {
-  state = {};
+  state = {}
 
   async componentDidMount() {
-    const user = await utils.getPlayer();
-    const account = await utils.getAccount();
-    const score = await utils.getScore(account);
-    const achievements = await utils.getMyAchievemnets(account);
-    this.setState({ user, account, achievements, score });
+    const accounts = await utils.getAccount()
+    const account = accounts[0]
+    const user = await utils.getPlayer(account)
+    console.log(user)
+    const score = await utils.getScore(account)
+    const achievements = await utils.getMyAchievemnets(account)
+    this.setState({ user, account, achievements, score })
   }
 
   render() {
     const {
-      state: { name, account, achievements, score },
-    } = this;
+      state: { name, account, achievements, score }
+    } = this
 
     return (
       <App>
@@ -91,13 +94,13 @@ class SharkShift extends Component {
           user={{
             name,
             account,
-            score,
+            score
           }}
         />
         <Leaderboard achievements={achievements} />
       </App>
-    );
+    )
   }
 }
 
-export default SharkShift;
+export default SharkShift

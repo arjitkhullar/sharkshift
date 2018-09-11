@@ -37,7 +37,9 @@ class Index extends React.Component {
               Game management & anti-smurfing on the blockchain.
             </p>
             <div className="btns">
-              <button>Login as Gamer</button>
+              <a href="/userProfile">
+                <button>Login as Gamer</button>
+              </a>
               <a href="/admin">
                 <button>Login as Admin</button>
               </a>
