@@ -10,8 +10,11 @@ contract Game {
   mapping(address => bool) public registered;
   mapping(address => string[]) public achievements;
 
-  constructor(string name) public {
+  string[] public gameAchievements;
+
+  constructor(string name, string[] achievements) public {
     gameName = name;
+    gameAchievements = achievements;
   }
 
   function isRegistered(address player) public view returns (bool){
