@@ -11,22 +11,6 @@ const colors = {
   yellow: '#e3b23c',
 };
 
-// styles
-const profileInfo = css({
-  width: '100%',
-  textAlign: 'center',
-});
-
-const pic = css({
-  borderRadius: '50%',
-  overflow: 'hidden',
-  border: `10px solid ${colors.blackBorder}`,
-  img: {
-    height: 'auto',
-    maxWidth: 100,
-  },
-});
-
 // styled components
 export const containerStyle = {
   padding: 0,
@@ -44,11 +28,42 @@ export const App = styled('div')(() => ({
   flexDirection: 'row',
   flexBasis: '50%',
   fontSize: '16px',
+  fontFamily: '"Lato", sans-serif',
 }));
 
 export const UserProfile = styled('div')(() => ({
   padding: '2em',
 }));
+
+export const GamerScore = styled('div')(() => ({
+  display: 'flex',
+  flexDirection: 'row',
+  flexBasis: '50%',
+  '.score': {
+    fontSize: '1em',
+    color: colors.whiteText,
+    spang: {
+      color: colors.red,
+      fontSize: '2em',
+    },
+  },
+}));
+
+// styles
+const profileInfo = css({
+  width: '100%',
+  textAlign: 'center',
+});
+
+const pic = css({
+  borderRadius: '50%',
+  overflow: 'hidden',
+  border: `10px solid ${colors.blackBorder}`,
+  img: {
+    height: 'auto',
+    maxWidth: 100,
+  },
+});
 
 export default {
   profileInfo,
