@@ -5,9 +5,15 @@ import classes from './styles'
 class Admin extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+      gameName: '',
+      currentAchievement: '',
+      achievements: []
+    }
 
     this.handleChange = this.handleChange.bind(this)
+    this.handlePress = this.handlePress.bind(this)
+    this.submit = this.submit.bind(this)
   }
 
   handleChange(e) {
@@ -16,13 +22,56 @@ class Admin extends React.Component {
     })
   }
 
+  handlePress(e) {
+    if (e.key === 'Enter') {
+      let temp = this.state.achievements
+      temp.push(e.target.value)
+      this.setState({
+        achievements: temp,
+        currentAchievement: ''
+      })
+    }
+  }
+
+  submit() {
+    console.log(this.state)
+  }
+
   render() {
     return (
       <div className={classes.pgAdmin}>
-        <h4>Admin Panel</h4>
-        <h2>Input Game Details</h2>
+        <div className="inner">
+          <h4>Admin Panel</h4>
+          <h2>Input Game Details</h2>
 
-        <input name="" />
+          <label>Game Name</label>
+          <input
+            name="gameName"
+            placeholder="e.g. Jamestown..."
+            type="text"
+            onChange={this.handleChange}
+          />
+
+          <label>Achievements</label>
+          <input
+            type="text"
+            placeholder="e.g. some achievement"
+            name="currentAchievement"
+            value={this.state.currentAchievement}
+            onChange={this.handleChange}
+            onKeyPress={this.handlePress}
+          />
+
+          {this.state.achievements.map((tag, id) => {
+            return (
+              <span className="tag" key={id}>
+                {tag}
+              </span>
+            )
+          })}
+
+          <button onClick={this.submit}>Submit</button>
+        </div>
       </div>
     )
   }
