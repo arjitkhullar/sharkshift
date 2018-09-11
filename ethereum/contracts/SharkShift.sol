@@ -30,6 +30,10 @@ contract SharkShift {
         players[player].games.push(game);
     }
 
+    function getGames(address player) public returns(address[]) {
+        return players[player].games;
+    }
+
     function getScore(address player) public view returns(uint score) {
         Player storage p = players[player];
         
