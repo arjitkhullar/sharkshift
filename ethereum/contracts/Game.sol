@@ -1,4 +1,5 @@
-pragma solidity ^0.4.20;
+// pragma solidity ^0.4.20;
+pragma experimental ABIEncoderV2;
 
 import "./ERC721.sol";
 
@@ -40,5 +41,9 @@ contract Game {
 
   function getScore(address player) public view returns (uint) {
       return playerScore[player];
+  }
+
+  function getAchievements(address player) public view returns (string[]) {
+      return achievements[player];
   }
 }
