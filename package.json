@@ -5,12 +5,11 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "compile": "node ethereum/compile --exec babel-node ",
-    "deploy": "node ethereum/deploy --exec babel-node "
+    "truffle": "cd ethereum && truffle compile && truffle deploy && truffle migrate --reset"
   },
   "dependencies": {
     "@zeit/next-css": "^0.1.4",
-    "antd": "^3.3.1",
+    "antd": "^3.9.2",
     "babel-cli": "latest",
     "babel-plugin-import": "^1.1.1",
     "emotion": "^9.2.8",
@@ -25,6 +24,8 @@
     "redux-devtools-extension": "^2.13.2",
     "redux-thunk": "^2.1.0",
     "typeface-roboto": "0.0.54",
+    "truffle": "^4.1.14",
+    "truffle-contract": "^3.0.6",
     "web3": "latest"
   },
   "license": "ISC",

@@ -1,42 +1,77 @@
 import React, { Component } from 'react';
 
 // styled component(s)
-import styles, { App, UserProfile, GamerScore } from './styles';
+import classes, { App, UserProfile, GamerScore } from './styles';
 
 const stubUser = {
   pic: '//image.ibb.co/jsjxfU/Selection_002.png',
   name: 'John Doe',
   lastLogin: '14 hours ago',
   score: '170',
-  rating: '7265',
   location: 'Toronto, Canada',
 };
 
-const Profile = ({ user = stubUser }) => (
+const stubachievements = [
+  {
+    id: 1,
+    name: 'Game Name',
+    achievements: ['one', 'two', 'three'],
+  },
+  {
+    id: 2,
+    name: 'Game Name',
+    achievements: ['one', 'two', 'three'],
+  },
+  {
+    id: 3,
+    name: 'Game Name',
+    achievements: ['one', 'two', 'three'],
+  },
+  {
+    id: 4,
+    name: 'Game Name',
+    achievements: ['one', 'two', 'three'],
+  },
+];
+
+const Profile = ({ user }) => (
   <UserProfile>
-    <div className={styles.profileInfo}>
-      <p className={styles.pic}>
+    <div className={classes.profileInfo}>
+      <p className={classes.pic}>
         <img src={user.pic} />
       </p>
       <p>{user.name}</p>
-      <p>Last seen: {user.lastLogin}</p>
       <GamerScore>
         <p className="score">
-          Rank: <span> {user.score}</span>
-        </p>
-        <p className="rating">
-          Rating: <span> {user.rating}</span>
+          Score <span> {user.score}</span>
         </p>
       </GamerScore>
     </div>
   </UserProfile>
 );
 
+const Leaderboard = ({ achievements }) => (
+  <div className={classes.leaderboard}>
+    <h1>Achievements:</h1>
+    <ul className={classes.list}>
+      {achievements.map(({ name, id, achievements }) => (
+        <li key={`game_${id}`}>
+          <span className={classes.gameName}>{name}</span>
+          <span className={classes.achievements}>
+            Achievements: {achievements.join(', ')}
+          </span>
+        </li>
+      ))}
+    </ul>
+  </div>
+);
+
 class SharkShift extends Component {
   render() {
     return (
       <App>
-        <Profile />
+        <Profile user={stubUser} />
+        <Leaderboard achievements={stubachievements} />
       </App>
     );
   }
