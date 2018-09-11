@@ -43,6 +43,7 @@ const Profile = ({ user }) => (
         <img src={user.pic} />
       </p>
       <p>{user.name}</p>
+      <p>Account#: {user.account}</p>
       <GamerScore>
         <p className="score">
           Score <span> {user.score}</span>
@@ -69,16 +70,31 @@ const Leaderboard = ({ achievements }) => (
 );
 
 class SharkShift extends Component {
+  state = {};
+
   async componentDidMount() {
-    const user = await utils.getAccount(0);
-    console.log(user);
+    const user = await utils.getPlayer();
+    const account = await utils.getAccount();
+    const score = await utils.getScore(account);
+    const achievements = await utils.getMyAchievemnets(account);
+    this.setState({ user, account, achievements, score });
   }
 
   render() {
+    const {
+      state: { name, account, achievements, score },
+    } = this;
+
     return (
       <App>
-        <Profile user={stubUser} />
-        <Leaderboard achievements={stubachievements} />
+        <Profile
+          user={{
+            name,
+            account,
+            score,
+          }}
+        />
+        <Leaderboard achievements={achievements} />
       </App>
     );
   }
