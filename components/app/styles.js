@@ -28,6 +28,7 @@ export const App = styled('div')(() => ({
   flexDirection: 'row',
   flexBasis: '50%',
   fontSize: '16px',
+  fontFamily: '"Lato", sans-serif',
 }));
 
 export const UserProfile = styled('div')(() => ({

@@ -24,6 +24,7 @@
     "redux": "^3.6.0",
     "redux-devtools-extension": "^2.13.2",
     "redux-thunk": "^2.1.0",
+    "typeface-roboto": "0.0.54",
     "web3": "latest"
   },
   "license": "ISC",
