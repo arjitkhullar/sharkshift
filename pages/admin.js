@@ -1,4 +1,6 @@
 import React, { Fragment } from 'react'
+import { addGame } from '../utils'
+import { web3 } from '../utils/contractInstance'
 
 import classes from './styles'
 
@@ -8,12 +10,19 @@ class Admin extends React.Component {
     this.state = {
       gameName: '',
       currentAchievement: '',
-      achievements: []
+      achievements: [],
+      account: ''
     }
 
     this.handleChange = this.handleChange.bind(this)
     this.handlePress = this.handlePress.bind(this)
     this.submit = this.submit.bind(this)
+  }
+
+  async componentDidMount() {
+    this.setState({
+      account: await web3.eth.getAccounts()
+    })
   }
 
   handleChange(e) {
@@ -33,8 +42,13 @@ class Admin extends React.Component {
     }
   }
 
-  submit() {
+  async submit() {
     console.log(this.state)
+    await addGame(
+      this.state.account,
+      this.state.gameName,
+      this.state.achievements
+    )
   }
 
   render() {

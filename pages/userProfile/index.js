@@ -77,10 +77,12 @@ class SharkShift extends Component {
     const accounts = await utils.getAccount()
     const account = accounts[0]
     const user = await utils.getPlayer(account)
+    const games = await utils.getGames(account)
     console.log(user)
+    console.dir(games)
     const score = await utils.getScore(account)
-    const achievements = await utils.getMyAchievemnets(account)
-    this.setState({ user, account, achievements, score })
+    // const achievements = await utils.getMyAchievemnets(account)
+    this.setState({ user, account, achievements: [], score })
   }
 
   render() {

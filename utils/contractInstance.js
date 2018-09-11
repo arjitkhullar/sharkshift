@@ -20,31 +20,20 @@ export const getSharkShift = async () => {
   const instance = await Contract.deployed()
   return instance
 }
-
-export const addGame = async (instance, account) => {
-  await getSharkShift().addGame(instance, account)
+export const getAccount = async () => {
+  const accounts = await web3.eth.getAccounts()
+  return accounts[0]
 }
-export const deployAndGetGame = async () => {
-  const account = web3.eth.accounts[0]
-  const compiled = JSON.parse(Game)
-  const networks = compiled.networks
-  const networkKeys = Object.keys(networks)
-  console.log(compiled, networkKeys, networks)
-  web3.eth
+export const deployGame = async (gameName, gameAchievements) => {
+  const account = await getAccount()
+  const instance = new web3.eth.Contract(Game.abi)
     .deploy({
-      data: JSON.parse(Game).bytecode,
-      arguments: [
-        account,
-        networks[networkKeys[networkKeys.length - 1]].address
-      ]
+      data: Game.bytecode,
+      arguments: [gameName, gameAchievements]
     })
     .send({
       from: account,
-      gas: 150000000
+      gas: 1500000
     })
-  const Contract = truffleContract(Game)
-  Contract.setProvider(currentProvider)
-  const instance = await Contract.deployed()
-  await addGame(instance, account)
   return instance
 }

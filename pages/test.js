@@ -15,7 +15,7 @@ class Index extends React.Component {
     const accounts = await web3.eth.getAccounts()
     // console.log(accounts[0])
     // console.log(await addPlayer(accounts[0], 'tom'))
-    console.log(await addGame(accounts[0], 'lolol'))
+    // console.log(await addGame(accounts[0], 'lolol', ['lpopo']))
     console.log(await getGames(accounts[0]))
     console.log(await getScore(accounts[0]))
     console.log(await getPlayer(accounts[0]))
