@@ -44,6 +44,9 @@ const pgLogin = css({
   }
 })
 
+const pgAdmin = css({})
+
 export default {
-  pgLogin
+  pgLogin,
+  pgAdmin
 }

@@ -37,7 +37,9 @@ class Index extends React.Component {
               Game management & anti-smurfing on the blockchain.
             </p>
             <div className="btns">
-              <button>Login as Gamer</button>
+              <Link href="/admin">
+                <button>Login as Gamer</button>
+              </Link>
               <button>Login as Admin</button>
             </div>
           </div>
@@ -46,5 +48,23 @@ class Index extends React.Component {
     )
   }
 }
+
+function onClickHandler(href) {
+  return (e) => {
+    e.preventDefault()
+    Router.push(href)
+  }
+}
+
+const Link = ({ children, href }) => (
+  <a href="#" onClick={onClickHandler(href)}>
+    {children}
+    <style jsx>{`
+      a {
+        margin-right: 10px;
+      }
+    `}</style>
+  </a>
+)
 
 export default connect()(Index)
