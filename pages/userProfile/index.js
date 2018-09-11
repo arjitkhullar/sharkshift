@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 // styled component(s)
 import classes, { App, UserProfile, GamerScore } from './styles';
 
+import * as utils from '../../utils';
+
 const stubUser = {
   pic: '//image.ibb.co/jsjxfU/Selection_002.png',
   name: 'John Doe',
@@ -67,6 +69,11 @@ const Leaderboard = ({ achievements }) => (
 );
 
 class SharkShift extends Component {
+  async componentDidMount() {
+    const user = await utils.getAccount(0);
+    console.log(user);
+  }
+
   render() {
     return (
       <App>
