@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 // styled component(s)
 import classes, { App, UserProfile, GamerScore } from './styles';
 
+import * as utils from '../../utils';
+
 const stubUser = {
   pic: '//image.ibb.co/jsjxfU/Selection_002.png',
   name: 'John Doe',
@@ -41,6 +43,7 @@ const Profile = ({ user }) => (
         <img src={user.pic} />
       </p>
       <p>{user.name}</p>
+      <p>Account#: {user.account}</p>
       <GamerScore>
         <p className="score">
           Score <span> {user.score}</span>
@@ -67,11 +70,31 @@ const Leaderboard = ({ achievements }) => (
 );
 
 class SharkShift extends Component {
+  state = {};
+
+  async componentDidMount() {
+    const user = await utils.getPlayer();
+    const account = await utils.getAccount();
+    const score = await utils.getScore(account);
+    const achievements = await utils.getMyAchievemnets(account);
+    this.setState({ user, account, achievements, score });
+  }
+
   render() {
+    const {
+      state: { name, account, achievements, score },
+    } = this;
+
     return (
       <App>
-        <Profile user={stubUser} />
-        <Leaderboard achievements={stubachievements} />
+        <Profile
+          user={{
+            name,
+            account,
+            score,
+          }}
+        />
+        <Leaderboard achievements={achievements} />
       </App>
     );
   }
