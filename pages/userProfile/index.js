@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 // styled component(s)
-import styles, { App, UserProfile } from './styles';
+import styles, { App, UserProfile } from './styles'
+import Header from '../../components/Header'
 
 const stubUser = {
   pic: '//image.ibb.co/jsjxfU/Selection_002.png',
-  name: 'John Doe',
-};
+  name: 'John Doe'
+}
 
 const Profile = ({ user = stubUser }) => (
   <UserProfile>
@@ -16,16 +17,17 @@ const Profile = ({ user = stubUser }) => (
       <p>{user.name}</p>
     </div>
   </UserProfile>
-);
+)
 
 class SharkShift extends Component {
   render() {
     return (
       <App>
+        <Header />
         <Profile />
       </App>
-    );
+    )
   }
 }
 
-export default SharkShift;
+export default SharkShift
