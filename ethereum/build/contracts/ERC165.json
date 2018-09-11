@@ -60,7 +60,7 @@
         "id": 21,
         "nodeType": "ImportDirective",
         "scope": 70,
-        "sourceUnit": 774,
+        "sourceUnit": 787,
         "src": "26:23:1",
         "symbolAliases": [],
         "unitAlias": ""
@@ -74,10 +74,10 @@
               "id": 22,
               "name": "IERC165",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 773,
+              "referencedDeclaration": 786,
               "src": "177:7:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_IERC165_$773",
+                "typeIdentifier": "t_contract$_IERC165_$786",
                 "typeString": "contract IERC165"
               }
             },
@@ -87,7 +87,7 @@
           }
         ],
         "contractDependencies": [
-          773
+          786
         ],
         "contractKind": "contract",
         "documentation": "@title ERC165\n@author Matt Condon (@shrugs)\n@dev Implements ERC165 using a lookup table.",
@@ -95,7 +95,7 @@
         "id": 69,
         "linearizedBaseContracts": [
           69,
-          773
+          786
         ],
         "name": "ERC165",
         "nodeType": "ContractDefinition",
@@ -409,7 +409,7 @@
             "scope": 69,
             "src": "739:141:1",
             "stateMutability": "view",
-            "superFunction": 772,
+            "superFunction": 785,
             "visibility": "external"
           },
           {
@@ -484,10 +484,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1207,
-                        1208
+                        1177,
+                        1178
                       ],
-                      "referencedDeclaration": 1207,
+                      "referencedDeclaration": 1177,
                       "src": "1019:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -680,7 +680,7 @@
         "id": 21,
         "nodeType": "ImportDirective",
         "scope": 70,
-        "sourceUnit": 774,
+        "sourceUnit": 787,
         "src": "26:23:1",
         "symbolAliases": [],
         "unitAlias": ""
@@ -694,10 +694,10 @@
               "id": 22,
               "name": "IERC165",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 773,
+              "referencedDeclaration": 786,
               "src": "177:7:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_IERC165_$773",
+                "typeIdentifier": "t_contract$_IERC165_$786",
                 "typeString": "contract IERC165"
               }
             },
@@ -707,7 +707,7 @@
           }
         ],
         "contractDependencies": [
-          773
+          786
         ],
         "contractKind": "contract",
         "documentation": "@title ERC165\n@author Matt Condon (@shrugs)\n@dev Implements ERC165 using a lookup table.",
@@ -715,7 +715,7 @@
         "id": 69,
         "linearizedBaseContracts": [
           69,
-          773
+          786
         ],
         "name": "ERC165",
         "nodeType": "ContractDefinition",
@@ -1029,7 +1029,7 @@
             "scope": 69,
             "src": "739:141:1",
             "stateMutability": "view",
-            "superFunction": 772,
+            "superFunction": 785,
             "visibility": "external"
           },
           {
@@ -1104,10 +1104,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1207,
-                        1208
+                        1177,
+                        1178
                       ],
-                      "referencedDeclaration": 1207,
+                      "referencedDeclaration": 1177,
                       "src": "1019:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -1279,5 +1279,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2018-09-11T21:09:52.164Z"
+  "updatedAt": "2018-09-11T22:47:51.533Z"
 }

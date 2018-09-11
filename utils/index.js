@@ -22,3 +22,22 @@ export const getScore = async (address) => {
   })
   return Number(score)
 }
+
+export const addGame = async (playerAddress) => {
+  const instance = await getSharkShift()
+  const gameContract = await deployAndGetGame()
+  console.dir(gameContract)
+  return await instance.addGame(gameContract.address, playerAddress)
+}
+export const getGames = async (address) => {
+  const instance = await getSharkShift()
+  return await instance.getGames(address)
+}
+
+export const getPlayer = async (address) => {
+  const instance = await getSharkShift()
+  const players = await instance.players
+  const player = await players.call(address)
+  console.dir(player)
+  return player
+}
