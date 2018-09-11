@@ -5,9 +5,10 @@ import styles, { App, UserProfile, GamerScore } from './styles';
 const stubUser = {
   pic: '//image.ibb.co/jsjxfU/Selection_002.png',
   name: 'John Doe',
-  lastLogin: '13 hours ago',
+  lastLogin: '14 hours ago',
   score: '170',
   rating: '7265',
+  location: 'Toronto, Canada',
 };
 
 const Profile = ({ user = stubUser }) => (
