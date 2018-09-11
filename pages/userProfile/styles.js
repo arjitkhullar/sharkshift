@@ -100,6 +100,7 @@ const achievements = css({
 
 const gameName = css({
   display: 'block',
+  color: colors.blue,
 });
 
 export default {

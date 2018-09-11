@@ -63,7 +63,7 @@ const Leaderboard = ({ achievements }) => (
         <li key={`game_${id}`}>
           <span className={classes.gameName}>{name}</span>
           <span className={classes.achievements}>
-            {achievements.join(', ')}
+            Achievements: {achievements.join(', ')}
           </span>
         </li>
       ))}
