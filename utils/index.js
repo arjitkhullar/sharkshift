@@ -1,27 +1,27 @@
-const { getSharkShift, deployAndGetGame, web3 } = require('./contractInstance')
-const GAS = 1500000
+const { getSharkShift, deployAndGetGame, web3 } = require('./contractInstance');
+const GAS = 1500000;
 
 export const getAccount = async () => {
-  const accounts = await web3.eth.getAccounts()
-  return accounts[0]
-}
+  const accounts = await web3.eth.getAccounts();
+  return accounts[0];
+};
 export const addPlayer = async (address, name) => {
-  const instance = await getSharkShift()
-  const from = await getAccount()
+  const instance = await getSharkShift();
+  const from = await getAccount();
   return await instance.addPlayer(address, name, {
     from,
-    gas: GAS
-  })
-}
-export const getScore = async (address) => {
-  const instance = await getSharkShift()
-  const from = await getAccount()
+    gas: GAS,
+  });
+};
+export const getScore = async address => {
+  const instance = await getSharkShift();
+  const from = await getAccount();
   const score = await instance.getScore(address, {
     from,
-    gas: GAS
-  })
-  return Number(score)
-}
+    gas: GAS,
+  });
+  return Number(score);
+};
 
 export const addGame = async (playerAddress) => {
   const instance = await getSharkShift()
