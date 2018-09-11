@@ -46,6 +46,7 @@ export const GamerScore = styled('div')(() => ({
   '.score, .rating': {
     fontSize: '1em',
     width: '50%',
+    margin: 'auto',
     color: colors.whiteText,
     span: {
       color: colors.blue,

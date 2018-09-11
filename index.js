@@ -11,6 +11,8 @@ export default ({ children }) => (
     </Head>
     <style jsx global>{`
       body {
+        background: #111;
+        padding: 0;
       }
     `}</style>
     {children}

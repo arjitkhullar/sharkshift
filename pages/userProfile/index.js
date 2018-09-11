@@ -8,7 +8,6 @@ const stubUser = {
   name: 'John Doe',
   lastLogin: '14 hours ago',
   score: '170',
-  rating: '7265',
   location: 'Toronto, Canada',
 };
 
@@ -42,13 +41,9 @@ const Profile = ({ user }) => (
         <img src={user.pic} />
       </p>
       <p>{user.name}</p>
-      <p>Last seen: {user.lastLogin}</p>
       <GamerScore>
         <p className="score">
-          Rank <span> {user.score}</span>
-        </p>
-        <p className="rating">
-          Rating <span> {user.rating}</span>
+          Score <span> {user.score}</span>
         </p>
       </GamerScore>
     </div>
