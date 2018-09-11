@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 // styled component(s)
-import styles, { App, UserProfile } from './styles'
-import Header from '../../components/Header'
+import styles, { App, UserProfile } from './styles';
+import Header from '../../components/Header';
 
 const stubUser = {
   pic: '//image.ibb.co/jsjxfU/Selection_002.png',
   name: 'John Doe',
-  lastLogin: '13 hours ago'
-}
+  lastLogin: '13 hours ago',
+};
 
 const Profile = ({ user = stubUser }) => (
   <UserProfile>
@@ -19,7 +19,7 @@ const Profile = ({ user = stubUser }) => (
       <p>Last seen: {user.lastLogin}</p>
     </div>
   </UserProfile>
-)
+);
 
 class SharkShift extends Component {
   render() {
@@ -28,8 +28,8 @@ class SharkShift extends Component {
         <Header />
         <Profile />
       </App>
-    )
+    );
   }
 }
 
-export default SharkShift
+export default SharkShift;
