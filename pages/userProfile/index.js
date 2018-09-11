@@ -5,7 +5,8 @@ import Header from '../../components/Header'
 
 const stubUser = {
   pic: '//image.ibb.co/jsjxfU/Selection_002.png',
-  name: 'John Doe'
+  name: 'John Doe',
+  lastLogin: '13 hours ago'
 }
 
 const Profile = ({ user = stubUser }) => (
@@ -15,6 +16,7 @@ const Profile = ({ user = stubUser }) => (
         <img src={user.pic} />
       </p>
       <p>{user.name}</p>
+      <p>Last seen: {user.lastLogin}</p>
     </div>
   </UserProfile>
 )
