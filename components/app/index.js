@@ -1,3 +1,5 @@
+// @deprecated
+// pages/userProfile has the code for user profile
 import React, { Component } from 'react';
 // styled component(s)
 import styles, { App, UserProfile, GamerScore } from './styles';
