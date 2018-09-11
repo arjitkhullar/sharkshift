@@ -7,7 +7,7 @@ const colors = {
   whiteBg: '#edebd7',
   whiteText: '#fafafa',
   blackText: '#333333',
-  blue: '#47a8e5',
+  blue: '#44c8e5',
   yellow: '#e3b23c',
 };
 
@@ -78,6 +78,15 @@ const leaderboard = css({
   width: '50%',
   padding: '2em',
   background: 'rgba(255, 255, 255, 0.1)',
+  h1: {
+    fontSize: '1.5em',
+    paddingLeft: '15px',
+    fontWeight: 400,
+    color: colors.blue,
+  },
+  ul: {
+    paddingLeft: '1em',
+  },
   li: {
     borderBottom: `1px solid ${colors.whiteBg}`,
     padding: '0.5em 0',

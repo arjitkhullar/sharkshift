@@ -57,10 +57,10 @@ const Profile = ({ user }) => (
 
 const Leaderboard = ({ achievements }) => (
   <div className={classes.leaderboard}>
+    <h1>Achievements:</h1>
     <ul className={classes.list}>
       {achievements.map(({ name, id, achievements }) => (
         <li key={`game_${id}`}>
-          Game
           <span className={classes.gameName}>{name}</span>
           <span className={classes.achievements}>
             {achievements.join(', ')}
